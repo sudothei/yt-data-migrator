@@ -1,0 +1,246 @@
+{
+  "kind": "youtube#playlistItemListResponse",
+  "etag": "hvNEAE6OsoQ8Eg9RGfyfI0QKSXc",
+  "nextPageToken": "CAUQAA",
+  "items": [
+    {
+      "kind": "youtube#playlistItem",
+      "etag": "KJOLGjYt0OBb4CsOLs0wXLPDfHs",
+      "id": "UEx6aXUwcHJWdVNXSjBrcElKMlJIRDR2RlJNbTJqWV9lRC41NkI0NEY2RDEwNTU3Q0M2",
+      "snippet": {
+        "publishedAt": "2019-09-03T20:45:13Z",
+        "channelId": "UCRNPRe5R1Q3tFL1FRJTJC3g",
+        "title": "SHADES OF GREEN | EYESHADOW TUTORIAL",
+        "description": "-|SUBSCRIBE|- \nFollow me on Instagram @reereephillips\nPatreon - http://www.patreon.com/ReeRee\nAnd I'm sometimes on Twitter @reeree_beauty\nTumblr: reereephillips.tumblr.com\n__\n\nMUSIC\n\n\"Moonlight Sonata\" by Beethoven\n\nSource: Youtube Audio Library\nhttps://www.youtube.com/audiolibrary/music\n\n__\n\nPRODUCTS USED\n\n- NYX Eyeshadow Base (White)\n- Sugarpill Eyeshadow (Acidberry and Tako)\n- Inglot Eyeshadows (#338 and #391)\n- NYX Jumbo Eye Pencil (Peacock)\n- MAC Fluidline Gel Liner (Blacktrack)\n- House of Lashes (Precious Under-eye Lashes)\n- Model Rock lashes (discontinued style)\nLips\n- Lime Crime Velveteen (Black Velvet)\n\n__\n\n*** ALL PRODUCTS AND OPINIONS IN THIS VIDEO ARE MY OWN. I AM NOT SPONSORED OR AFFILIATED WITH ANY COMPANIES! ***",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/JZrZpUOhgWk/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/JZrZpUOhgWk/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/JZrZpUOhgWk/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/JZrZpUOhgWk/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/JZrZpUOhgWk/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Paige Venuto",
+        "playlistId": "PLziu0prVuSWJ0kpIJ2RHD4vFRMm2jY_eD",
+        "position": 0,
+        "resourceId": {
+          "kind": "youtube#video",
+          "videoId": "JZrZpUOhgWk"
+        }
+      },
+      "contentDetails": {
+        "videoId": "JZrZpUOhgWk",
+        "videoPublishedAt": "2015-02-07T14:51:51Z"
+      }
+    },
+    {
+      "kind": "youtube#playlistItem",
+      "etag": "dHXCDRPQlgRpPL-IF8CpTCCBAIM",
+      "id": "UEx6aXUwcHJWdVNXSjBrcElKMlJIRDR2RlJNbTJqWV9lRC4wMTcyMDhGQUE4NTIzM0Y5",
+      "snippet": {
+        "publishedAt": "2019-09-12T02:10:46Z",
+        "channelId": "UCRNPRe5R1Q3tFL1FRJTJC3g",
+        "title": "The TRUTH About Chaos Magic",
+        "description": "There are things you need to know about Chaos Magic for your own safety.\n\nFurther information:\nhttps://nathanieljharris.wordpress.com/2017/01/20/beast-wing-666-ritual-abuse-in-the-uk/",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/ZMQVpeGXv2I/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/ZMQVpeGXv2I/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/ZMQVpeGXv2I/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Paige Venuto",
+        "playlistId": "PLziu0prVuSWJ0kpIJ2RHD4vFRMm2jY_eD",
+        "position": 1,
+        "resourceId": {
+          "kind": "youtube#video",
+          "videoId": "ZMQVpeGXv2I"
+        }
+      },
+      "contentDetails": {
+        "videoId": "ZMQVpeGXv2I",
+        "videoPublishedAt": "2019-04-10T13:36:23Z"
+      }
+    },
+    {
+      "kind": "youtube#playlistItem",
+      "etag": "Dy2ckOGk3EYf5w7rmyqqyzetNe0",
+      "id": "UEx6aXUwcHJWdVNXSjBrcElKMlJIRDR2RlJNbTJqWV9lRC4xMkVGQjNCMUM1N0RFNEUx",
+      "snippet": {
+        "publishedAt": "2019-09-12T02:11:02Z",
+        "channelId": "UCRNPRe5R1Q3tFL1FRJTJC3g",
+        "title": "3 years of Computer Science in 8 minutes",
+        "description": "This is the most asked question on my channel by far so I thought I'd explain how I learned programming. In the process I got a little distracted and accidentally explained all of computer science in 8 minutes (kind of). \n\nThe goal of this video was to show you the connections between modern day (high-level) programming and how it was implemented at the low level. I show you the basics in Java and convert it to C code, then into Assembly, which leads me to talk about how computers perform addition/subtraction, and the logic design behind that is all implemented with transistors. In case you couldn't tell, I love low level programming. Just a disclaimer that I'm not saying this is the best way to learn programming I am simply sharing what I feel was the most valuable in my learning so far. I know many people start with web technologies which can be a great introduction as well! I am currently teaching myself a lot of server networking & all that stuff. I just believe if you really want to understand how to design algorithms and solve problems in creative ways then the most valuable things you can learn are at the low level. Even though C is 40 years old it is still regarded as producing the most efficient code since you have full control over pointers and memory management with minimal overhead. (the only thing faster is assembly.. an even lower level)\n\nTechnical Resources!!\nC Programming Language, 2nd Edition (Awesome Book): https://amzn.to/2LDeFOr\nEasy68K (Assembly Simulator): http://www.easy68k.com/\nHexadecimal to Binary Conversions: https://www.rapidtables.com/convert/number/hex-dec-bin-converter.html\nTwo's Complement (Binary Addition/Subtraction): https://en.wikipedia.org/wiki/Two%27s_complement\n\nNext Video:\nPrevious Video:\n\nSocial\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\nWebsite: https://devoncrawford.io\nTwitter: https://twitter.com/DevonCrawford13\nSnapchat: https://www.snapchat.com/add/devoncrawfordyt\nInstagram: https://www.instagram.com/devoncrawford_/\nGithub: https://github.com/devoncrawford\nDiscord: https://discord.gg/sU2fur9\nPatreon: https://www.patreon.com/devoncrawford\n\nGear\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n- Video Editing Software (Premiere Pro CC): https://goo.gl/rKx66D\n- All Adobe Apps (I use this plan): https://goo.gl/hrTYFS\n- Keyboard (Velocifire TKL01) : https://amzn.to/2AQTjJQ\n- Monitors (Dell U2518D) : https://amzn.to/2AQQmco\n- Webcam (Logitech C920): https://amzn.to/2Cw588c\n- Desk Microphone (Blue Yeti): https://amzn.to/2FPFmzi\n- DSLR (Canon T7i): https://amzn.to/2T54mpZ\n- Wide Lens (Tokina 11-16mm F2.8): https://amzn.to/2MlpvcO\n- Full list of gear: https://devoncrawford.io/gear\n\nMusic\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\nemo the optimist - fading light\nLink: https://soundcloud.com/emotheoptimist/fading-light-2\n\nshortfatty - distant\nLink: https://soundcloud.com/shortfatty/distant\n\na l e x - This Week\nLink: https://beatsupply.fanlink.to/growingupvol2\n\nWeaver Beats² - TRAPPIN IN ＨＯＮＯＬＵＬＵ⁴\nLink: https://soundcloud.com/weaverbeats2/trappin-4\n\na l e x - Soul Will Mess With Me\nLink: https://beatsupply.fanlink.to/growingupvol2\n\na l e x - Peppy Won't Fly Straight and Its Getting on My Nerves\nLink: https://beatsupply.fanlink.to/growingupvol2",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/ReVeUvwTGdU/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/ReVeUvwTGdU/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/ReVeUvwTGdU/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/ReVeUvwTGdU/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/ReVeUvwTGdU/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Paige Venuto",
+        "playlistId": "PLziu0prVuSWJ0kpIJ2RHD4vFRMm2jY_eD",
+        "position": 2,
+        "resourceId": {
+          "kind": "youtube#video",
+          "videoId": "ReVeUvwTGdU"
+        }
+      },
+      "contentDetails": {
+        "videoId": "ReVeUvwTGdU",
+        "videoPublishedAt": "2018-07-24T17:00:13Z"
+      }
+    },
+    {
+      "kind": "youtube#playlistItem",
+      "etag": "huYunkM3HxoIRNtjPvIHrc8oFXY",
+      "id": "UEx6aXUwcHJWdVNXSjBrcElKMlJIRDR2RlJNbTJqWV9lRC41MzJCQjBCNDIyRkJDN0VD",
+      "snippet": {
+        "publishedAt": "2019-09-12T02:11:07Z",
+        "channelId": "UCRNPRe5R1Q3tFL1FRJTJC3g",
+        "title": "Let's talk about books to read....",
+        "description": "Check out the TFC store. Stickers, mugs, hoodies, shirts, etc. Make sure to hover over the heart icon on the design to see where money is being donated. \n\nhttps://teespring.com/stores/the-fifth-column-2019",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/uHMcLRjChvw/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/uHMcLRjChvw/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/uHMcLRjChvw/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/uHMcLRjChvw/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/uHMcLRjChvw/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Paige Venuto",
+        "playlistId": "PLziu0prVuSWJ0kpIJ2RHD4vFRMm2jY_eD",
+        "position": 3,
+        "resourceId": {
+          "kind": "youtube#video",
+          "videoId": "uHMcLRjChvw"
+        }
+      },
+      "contentDetails": {
+        "videoId": "uHMcLRjChvw",
+        "videoPublishedAt": "2019-04-08T08:01:39Z"
+      }
+    },
+    {
+      "kind": "youtube#playlistItem",
+      "etag": "TJlH_XTVUwQVrr_KWIxEpFvu1h4",
+      "id": "UEx6aXUwcHJWdVNXSjBrcElKMlJIRDR2RlJNbTJqWV9lRC40NzZCMERDMjVEN0RFRThB",
+      "snippet": {
+        "publishedAt": "2019-09-12T02:11:24Z",
+        "channelId": "UCRNPRe5R1Q3tFL1FRJTJC3g",
+        "title": "Let's talk about buying a gun because of fear of political violence....",
+        "description": "Check out the TFC store. Be sure to click on the heart icon on each design's page to see where money is being donated. Each design has shirts, mugs, stickers, etc available. \n\nhttps://teespring.com/stores/the-fifth-column-2019 Not a typical video from me. It gets a little dark.",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/Yv-0OQ8KSkM/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/Yv-0OQ8KSkM/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/Yv-0OQ8KSkM/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/Yv-0OQ8KSkM/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/Yv-0OQ8KSkM/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Paige Venuto",
+        "playlistId": "PLziu0prVuSWJ0kpIJ2RHD4vFRMm2jY_eD",
+        "position": 4,
+        "resourceId": {
+          "kind": "youtube#video",
+          "videoId": "Yv-0OQ8KSkM"
+        }
+      },
+      "contentDetails": {
+        "videoId": "Yv-0OQ8KSkM",
+        "videoPublishedAt": "2018-10-30T21:28:24Z"
+      }
+    }
+  ],
+  "pageInfo": {
+    "totalResults": 27,
+    "resultsPerPage": 5
+  }
+}

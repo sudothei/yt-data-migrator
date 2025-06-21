@@ -1,0 +1,463 @@
+{% extends 'base.html' %}
+{% block content %}
+<header class="mdc-top-app-bar mdc-top-app-bar--fixed" id="app-bar">
+    <div class="mdc-top-app-bar__row">
+        <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start mdc-top-app-bar--regular">
+            <button class="material-icons mdc-top-app-bar__navigation-icon mdc-icon-button">menu</button>
+        </section>
+        <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start mdc-top-app-bar--contextual hidden-item">
+            <button class="material-icons mdc-top-app-bar__navigation-icon mdc-icon-button" id="deselect_all">close</button>
+            <span class="mdc-top-app-bar__title">0 selected</span>
+        </section>
+        <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
+            <button class="material-icons mdc-top-app-bar__action-item mdc-icon-button" id="export-sel-shortcut">save_alt</button>
+            <button class="material-icons mdc-top-app-bar__action-item mdc-icon-button" id="delete-sel-shortcut">delete</button>
+            <div id="menu" class="mdc-menu-surface--anchor">
+                <button class="material-icons mdc-top-app-bar__action-item mdc-icon-button" id="menu-btn">more_vert</button>
+                <div class="mdc-menu mdc-menu-surface">
+                    <ul class="mdc-list" role="menu" tabindex="-1">
+                        <li class="mdc-list-item" role="menuitem" id="select-all-btn">
+                            <span class="mdc-list-item__ripple"></span>
+                            <span class="mdc-list-item__text">Select All</span>
+                        </li>
+                        <li class="mdc-list-item" role="menuitem" id="import-more-btn">
+                            <span class="mdc-list-item__ripple"></span>
+                            <span class="mdc-list-item__text">Import More</span>
+                        </li>
+                        <li class="mdc-list-item" role="menuitem" id="delete-sel-btn">
+                            <span class="mdc-list-item__ripple"></span>
+                            <span class="mdc-list-item__text">Delete Selected</span>
+                        </li>
+                        <li class="mdc-list-item" role="menuitem" id="export-sel-btn">
+                            <span class="mdc-list-item__ripple"></span>
+                            <span class="mdc-list-item__text">Export Selected</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </div>
+</header>
+
+
+<aside class="mdc-drawer mdc-drawer--dismissible mdc-top-app-bar--fixed-adjust">
+    <div class="mdc-drawer__content">
+        <div class="mdc-list">
+            <a class="mdc-list-item" href="/logout">
+                <span class="mdc-list-item__ripple"></span>
+                <span class="mdc-list-item__text">Log Out</span>
+            </a>
+            <a class="mdc-list-item" id="del-acc-btn">
+                <span class="mdc-list-item__ripple"></span>
+                <span class="mdc-list-item__text">Delete Account</span>
+            </a>
+            <a class="mdc-list-item" href="/privacy" target="blank"
+                <span class="mdc-list-item__ripple"></span>
+                <span class="mdc-list-item__text">Privacy Policy</span>
+            </a>
+        </div>
+    </div>
+</aside>
+
+<div class="mdc-drawer-app-content mdc-top-app-bar--fixed-adjust">
+    <main class="main-content" id="main-content">
+
+        <div class="mdc-dialog" id="del-acc-dialog">
+            <div class="mdc-dialog__container">
+                <div class="mdc-dialog__surface"
+                     role="alertdialog"
+                     >
+                     <div class="mdc-dialog__content">
+                         Delete Account?
+                     </div>
+                    <div class="mdc-dialog__actions">
+                        <button class="mdc-button mdc-dialog__button" data-mdc-dialog-action="close">
+                            <div class="mdc-button__ripple"></div>
+                            <span class="mdc-button__label">cancel</span>
+                        </button>
+                        <form id="del-acc-forn" method="POST" action="/delacc">
+                            {{ delAccForm.hidden_tag() }}
+                            <button class="mdc-button mdc-dialog__button">
+                                <div class="mdc-button__ripple"></div>
+                                <span class="mdc-button__label">Delete</span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="mdc-dialog__scrim"></div>
+        </div>
+
+
+        <div class="mdc-dialog" id="import-form-dialog">
+            <div class="mdc-dialog__container">
+                <div class="mdc-dialog__surface"
+                     role="alertdialog">
+                    <div class="mdc-dialog__content">
+                        <form action="/import" method="POST" id="import-form">
+                            <ul class="mdc-list mdc-list">
+                                {{ importForm.hidden_tag() }}
+                                <li class="mdc-list-item" role="checkbox">
+                                    <span class="mdc-list-item__ripple"></span>
+                                    <h3 class="mdc-list-group__subheader">Liked Videos</h3>
+                                    <span class="mdc-list-item__meta">
+                                        <div class="mdc-checkbox">
+                                            <input type="checkbox"
+                                                   name="likedVideos"
+                                                   id="{{importForm.likedVideos.id}}"
+                                                   class="mdc-checkbox__native-control" />
+                                            <div class="mdc-checkbox__background">
+                                                <svg class="mdc-checkbox__checkmark"
+                                                     viewBox="0 0 24 24">
+                                                    <path class="mdc-checkbox__checkmark-path"
+                                                          fill="none"
+                                                          d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+                                                </svg>
+                                                <div class="mdc-checkbox__mixedmark"></div>
+                                            </div>
+                                        </div>
+                                    </span>
+                                </li>
+                                <li class="mdc-list-item" role="checkbox">
+                                    <span class="mdc-list-item__ripple"></span>
+                                    <h3 class="mdc-list-group__subheader">Subsciptions</h3>
+                                    <span class="mdc-list-item__meta">
+                                        <div class="mdc-checkbox">
+                                            <input type="checkbox"
+                                                   name="subscriptions"
+                                                   id="{{importForm.subscriptions.id}}"
+                                                   class="mdc-checkbox__native-control" />
+                                            <div class="mdc-checkbox__background">
+                                                <svg class="mdc-checkbox__checkmark"
+                                                     viewBox="0 0 24 24">
+                                                    <path class="mdc-checkbox__checkmark-path"
+                                                          fill="none"
+                                                          d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+                                                </svg>
+                                                <div class="mdc-checkbox__mixedmark"></div>
+                                            </div>
+                                        </div>
+                                    </span>
+                                </li>
+                                <li class="mdc-list-item" role="checkbox">
+                                    <span class="mdc-list-item__ripple"></span>
+                                    <h3 class="mdc-list-group__subheader">Your Playlists</h3>
+                                    <span class="mdc-list-item__meta">
+                                        <div class="mdc-checkbox">
+                                            <input type="checkbox"
+                                                   name="playlists"
+                                                   id="{{importForm.playlists.id}}"
+                                                   class="mdc-checkbox__native-control" />
+                                            <div class="mdc-checkbox__background">
+                                                <svg class="mdc-checkbox__checkmark"
+                                                     viewBox="0 0 24 24">
+                                                    <path class="mdc-checkbox__checkmark-path"
+                                                          fill="none"
+                                                          d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+                                                </svg>
+                                                <div class="mdc-checkbox__mixedmark"></div>
+                                            </div>
+                                        </div>
+                                    </span>
+                                </li>
+                            </ul>
+                            <div class="mdc-dialog__actions">
+                                <button class="mdc-button mdc-dialog__button" data-mdc-dialog-action="close">
+                                    <div class="mdc-button__ripple"></div>
+                                    <span class="mdc-button__label">Cancel</span>
+                                </button>
+                                <button class="mdc-button mdc-dialog__button">
+                                    <div class="mdc-button__ripple"></div>
+                                    <span class="mdc-button__label">Import</span>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="mdc-dialog__scrim"></div>
+        </div>
+
+
+        <div class="mdc-dialog" id="import-oauth-dialog">
+            <div class="mdc-dialog__container">
+                <div class="mdc-dialog__surface"
+                     role="alertdialog">
+                    <div class="mdc-dialog__content">
+                        Please link Google account before clicking next.
+                    </div>
+                    <div class="mdc-dialog__actions">
+                        <button class="mdc-button mdc-dialog__button" data-mdc-dialog-action="close">
+                            <div class="mdc-button__ripple"></div>
+                            <span class="mdc-button__label">Cancel</span>
+                        </button>
+                        <button class="mdc-button mdc-dialog__button" id="import-oauth-next-btn">
+                            <div class="mdc-button__ripple"></div>
+                            <span class="mdc-button__label">Next</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="mdc-dialog__scrim"></div>
+        </div>
+
+        <div class="mdc-dialog" id="export-oauth-dialog">
+            <div class="mdc-dialog__container">
+                <div class="mdc-dialog__surface"
+                     role="alertdialog">
+                    <div class="mdc-dialog__content">
+                        Please link Google account before clicking next.
+                    </div>
+                    <div class="mdc-dialog__actions">
+                        <button class="mdc-button mdc-dialog__button" data-mdc-dialog-action="close">
+                            <div class="mdc-button__ripple"></div>
+                            <span class="mdc-button__label">Cancel</span>
+                        </button>
+                        <button class="mdc-button mdc-dialog__button" id="export-oauth-next-btn">
+                            <div class="mdc-button__ripple"></div>
+                            <span class="mdc-button__label">Next</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="mdc-dialog__scrim"></div>
+        </div>
+
+        <div class="mdc-dialog" id="export-choice-dialog">
+            <div class="mdc-dialog__container">
+                <div class="mdc-dialog__surface"
+                     role="alertdialog">
+                    <div class="mdc-dialog__content">
+                        Download as json file or export to an account?
+                    </div>
+                    <div class="mdc-dialog__actions">
+                        <button class="mdc-button mdc-dialog__button" id="download-choice-btn">
+                            <div class="mdc-button__ripple"></div>
+                            <span class="mdc-button__label">Download</span>
+                        </button>
+                        <button class="mdc-button mdc-dialog__button" id="export-choice-btn">
+                            <div class="mdc-button__ripple"></div>
+                            <span class="mdc-button__label">Export</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="mdc-dialog__scrim"></div>
+        </div>
+
+
+
+
+        <div class="wrapper mdc-elevation--z1">
+
+            <form action="/selections" method="POST" id="selections">
+
+                
+        <div class="mdc-dialog" id="export-form-dialog">
+            <div class="mdc-dialog__container">
+                <div class="mdc-dialog__surface"
+                     role="alertdialog">
+                            <div class="mdc-dialog__content">
+                                Export selected items?
+                            </div>
+                            <div class="mdc-dialog__actions">
+                                <button class="mdc-button mdc-dialog__button" data-mdc-dialog-action="close">
+                                    <div class="mdc-button__ripple"></div>
+                                    <span class="mdc-button__label">Cancel</span>
+                                </button>
+                                <button class="mdc-button mdc-dialog__button">
+                                    <div class="mdc-button__ripple"></div>
+                                    <span class="mdc-button__label">Export</span>
+                                </button>
+                            </div>
+                </div>
+            </div>
+            <div class="mdc-dialog__scrim"></div>
+        </div>
+
+
+
+
+                <div class="mdc-dialog" id="delete-sel-dialog">
+                    <div class="mdc-dialog__container">
+                        <div class="mdc-dialog__surface"
+                             role="alertdialog">
+                            <div class="mdc-dialog__content">
+                                Delete Selected Items?
+                            </div>
+                            <div class="mdc-dialog__actions">
+                                <button class="mdc-button mdc-dialog__button" data-mdc-dialog-action="close">
+                                    <div class="mdc-button__ripple"></div>
+                                    <span class="mdc-button__label">Cancel</span>
+                                </button>
+                                <button class="mdc-button mdc-dialog__button">
+                                    <div class="mdc-button__ripple"></div>
+                                    <span class="mdc-button__label">Delete</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mdc-dialog__scrim"></div>
+                </div>
+
+
+
+                <div class="mdc-dialog" id="download-dialog">
+                    <div class="mdc-dialog__container">
+                        <div class="mdc-dialog__surface"
+                             role="alertdialog">
+                            <div class="mdc-dialog__content">
+                                Download .json file?
+                            </div>
+                            <div class="mdc-dialog__actions">
+                                <button class="mdc-button mdc-dialog__button">
+                                    <div class="mdc-button__ripple"></div>
+                                    <span class="mdc-button__label">Download File</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mdc-dialog__scrim"></div>
+                </div>
+
+
+
+
+                {{ selectionForm.hidden_tag() }}
+                <ul class="mdc-list mdc-list--thumbnail-list" role="group" id="list-categories">
+
+                    <li class="mdc-list-item">
+                        <span class="mdc-list-item__ripple"></span>
+                        <span class="material-icons mdc-list-item__graphic"> thumb_up </span>
+                        <h3 class="mdc-list-group__subheader">Liked Videos</h3>
+                        <span class="material-icons mdc-list-item__meta collapse-btn">expand_less</span> 
+                    </li>
+
+                    <div class="mdc-list-group">
+                        <ul class="mdc-list mdc-list--two-line mdc-list--video-list" role="group">
+                            {% for video in likes %}
+                            <li class="mdc-list-item" role="checkbox">
+                                <span class="mdc-list-item__ripple"></span>
+                                <img class="mdc-list-item__graphic" src="{{video['thumbnail']}}" >
+                                <span class="mdc-list-item__text">
+                                    <span class="mdc-list-item__primary-text">{{video['title']}}</span>
+                                    <span class="mdc-list-item__secondary-text">{{video['channel_title']}}</span>
+                                </span>
+                                <span class="mdc-list-item__meta">
+                                    <div class="mdc-checkbox selection-checkbox">
+                                        <input type="checkbox"
+                                               name="{{video['video_id']}}videoid"
+                                               class="mdc-checkbox__native-control"
+                                               id="{{video['video_id']}}"  />
+                                        <div class="mdc-checkbox__background">
+                                            <svg class="mdc-checkbox__checkmark"
+                                                 viewBox="0 0 24 24">
+                                                <path class="mdc-checkbox__checkmark-path"
+                                                      fill="none"
+                                                      d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+                                            </svg>
+                                            <div class="mdc-checkbox__mixedmark"></div>
+                                        </div>
+                                    </div>
+                                </span>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+
+                    <li class="mdc-list-item">
+                        <span class="mdc-list-item__ripple"></span>
+                        <span class="material-icons mdc-list-item__graphic">subscriptions</span>
+                        <h3 class="mdc-list-group__subheader">Subsciptions</h3>
+                        <span class="material-icons mdc-list-item__meta collapse-btn">expand_less</span> 
+                    </li>
+
+                    <div class="mdc-list-group">
+                        <ul class="mdc-list mdc-list--avatar-list" role="group">
+                            {% for sub in subs %}
+                            <li class="mdc-list-item" role="checkbox">
+                                <span class="mdc-list-item__ripple"></span>
+                                <img class="mdc-list-item__graphic" src="{{sub['thumbnail']}}" >
+                                <span class="mdc-list-item__text">
+                                    <span class="mdc-list-item__text">{{sub['title']}}</span>
+                                </span>
+                                <span class="mdc-list-item__meta">
+                                    <div class="mdc-checkbox selection-checkbox">
+                                        <input type="checkbox"
+                                               name="{{sub['channel_id']}}channel"
+                                               class="mdc-checkbox__native-control"
+                                               id="{{sub['channel_id']}}">
+                                        <div class="mdc-checkbox__background">
+                                            <svg class="mdc-checkbox__checkmark"
+                                                 viewBox="0 0 24 24">
+                                                <path class="mdc-checkbox__checkmark-path"
+                                                      fill="none"
+                                                      d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+                                            </svg>
+                                            <div class="mdc-checkbox__mixedmark"></div>
+                                        </div>
+                                    </div>
+                                </span>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+
+                    <li class="mdc-list-item">
+                        <span class="mdc-list-item__ripple"></span>
+                        <span class="material-icons mdc-list-item__graphic">video_library</span>
+                        <h3 class="mdc-list-group__subheader">Playlists</h3>
+                        <span class="material-icons mdc-list-item__meta collapse-btn">expand_less</span> 
+                    </li>
+
+                    <div class="mdc-list-group">
+                        <ul class="mdc-list mdc-list--video-list" role="group">
+                            {% for playlist in playlists %}
+                            <li class="mdc-list-item" role="checkbox">
+                                <span class="mdc-list-item__ripple"></span>
+                                <img class="mdc-list-item__graphic" src="{{playlist['thumbnail']}}" >
+                                <span class="mdc-list-item__text">
+                                    <span class="mdc-list-item__primary-text">{{playlist['title']}}</span>
+                                    <span class="mdc-list-item__secondary-text">{{playlist['privacy_status']}}</span>
+                                </span>
+                                <span class="mdc-list-item__meta">
+                                    <div class="mdc-checkbox selection-checkbox">
+                                        <input type="checkbox"
+                                               name="{{playlist['resource_id']}}playlis"
+                                               class="mdc-checkbox__native-control"
+                                               id="{{playlist['resource_id']}}"/>
+                                        <div class="mdc-checkbox__background">
+                                            <svg class="mdc-checkbox__checkmark"
+                                                 viewBox="0 0 24 24">
+                                                <path class="mdc-checkbox__checkmark-path"
+                                                      fill="none"
+                                                      d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+                                            </svg>
+                                            <div class="mdc-checkbox__mixedmark"></div>
+                                        </div>
+                                    </div>
+                                </span>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+
+                </ul>
+            </form>
+
+            <div id="import-suggest" class="centered hidden-item">
+                <p class="mdc-typography--headline5 mdc-theme--text-secondary-on-light">
+                You have no data yet.
+                <br>
+                Would you like to import some?
+                </p>
+                <div class="buttonbox">
+                    <button class="btn mdc-button mdc-button--raised" id="import-suggest-btn">  <span class="mdc-button__ripple"></span>Import Data</button>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+</div>
+{% endblock %}
